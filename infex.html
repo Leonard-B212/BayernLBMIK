@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8"> <!-- Zeichensatz auf UTF-8 setzen -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Für mobile Geräte optimieren -->
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Intranet-Tool</title>
-    <!-- Verlinkung der externen CSS-Datei für das Styling -->
+    
     <link rel="stylesheet" href="Styling.css">
 </head>
 <body>
 
-<!-- Hauptcontainer für die Seite -->
+
 <div class="container">
-    <h1>Intranet-Tool</h1> <!-- Überschrift der Seite -->
+    <h1>Intranet-Tool</h1> 
     
-    <!-- Eingabefeld für Benutzereingaben -->
+    
     <input type="text" id="inputField" placeholder="Gib etwas ein...">
         <button id="saveButton">Speichern</button>
-    <!-- Textfeld mit Platzhaltertext, das auf Benutzerinteraktionen wartet -->
+    
 
-    <!-- Ausgabefeld, dessen Inhalt sich dynamisch basierend auf der Eingabe ändert -->
+    
     <div class="output" id="outputField">Ausgabe wird hier erscheinen...</div>
-    <!-- Hier wird die Ausgabe angezeigt; standardmäßig ein Platzhaltertext -->
 
-    <!-- Drei Felder, die für feste Informationen genutzt werden -->
+
+    
     <div class="info-box" id="info1">
         <strong>SPK Mailverbund:</strong>
         <br>
         Der Empfänger ist Teil des f-i Mailverbundes - die Kommunikation führt über interne Leitungen und wird nicht in das Internet geleitet. Deshalb können auch vertrauliche Informationen bis zur Sicherheitsstufe X(?) versendet werden.
 
     </div>
-    <!-- Erstes Informationsfeld für statische Inhalte --> 
+    
 
     <div class="info-box" id="info2">
         <strong>TLS gesichert:</strong>
@@ -39,7 +39,7 @@
 
 
     </div> 
-    <!-- Zweites Informationsfeld für statische Inhalte -->
+    
 
     <div class="info-box" id="info3">
         <strong>Unsicher:</strong>
@@ -48,10 +48,10 @@
 
 
     </div>
-    <!-- Drittes Informationsfeld für statische Inhalte -->
+    
 </div>
 
-<!-- Verlinkung der externen JavaScript-Datei, die die Logik enthält -->
+
 <script src="Logik.js"></script>
 
 </body>

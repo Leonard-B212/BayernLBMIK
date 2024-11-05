@@ -2,43 +2,43 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex; /* Flexbox verwenden */
-    justify-content: center; /* Horizontale Zentrierung */
-    align-items: center; /* Vertikale Zentrierung */
-    height: 100vh; /* Volle Höhe des Bildschirms */
-    background-color: #f0f0f0; /* Optionaler Hintergrund */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    background-color: #f0f0f0; 
 }
 
 /* Container für die zentrale Seite, um den Inhalt zu zentrieren */
 .container {
     max-width: 600px;
-    width: 100%; /* Nimmt die volle Breite innerhalb der Maximalbreite */
-    padding: 20px; /* Etwas Innenabstand */
-    background-color: white; /* Hintergrundfarbe des Containers */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Leichte Schatten für mehr Tiefe */
-    border-radius: 8px; /* Abgerundete Ecken */
+    width: 100%; 
+    padding: 20px; 
+    background-color: white; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
 }
 
 /* Stil für Eingabefelder, Ausgabefelder und Informationsboxen */
 input, .output, .info-box {
-    width: 100%; /* Volle Breite für diese Elemente */
-    padding: 10px; /* Innenabstand des Inhalts */
-    margin: 10px 0; /* Außenabstand zwischen den Elementen */
-    box-sizing: border-box; /* Bezieht Padding und Border in die Breitenberechnung ein */
-    border: 1px solid #ccc; /* Dünne graue Umrandung */
-    border-radius: 4px; /* Abgerundete Ecken für ein modernes Design */
+    width: 100%;
+    padding: 10px; 
+    margin: 10px 0; 
+    box-sizing: border-box; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
 }
 
 /* Spezifischer Stil für die Informationsboxen */
 .info-box {
-    background-color: #f9f9f9; /* Hellgrauer Hintergrund für die Informationsboxen */
+    background-color: #f9f9f9; 
 }
 #info3 {
-    background-color: #ff9393; /* Helle Rot-Ton */
+    background-color: #ff9393; 
 }
 #info2 {
-    background-color: #f9ffa4; /* Helle Gelb-Ton */
+    background-color: #f9ffa4; 
 }
 #info1 {
-    background-color: #baffb8; /* Helle Grün-Ton */
+    background-color: #baffb8; 
 }
