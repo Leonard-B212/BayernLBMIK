@@ -1,21 +1,37 @@
-// Zugriff auf das Eingabefeld und das Ausgabefeld im HTML
-const inputField = document.getElementById('inputField'); 
-const outputField = document.getElementById('outputField');
-
-// Event-Listener für das Eingabefeld hinzufügen, der auf Änderungen reagiert
-inputField.addEventListener('input', function() {
-    // Den aktuellen Wert des Eingabefelds auslesen
-    const inputValue = inputField.value; 
-
-    // Ausgabe entsprechend dem Eingabewert aktualisieren
-    outputField.textContent = inputValue ? `Du hast eingegeben: ${inputValue}` : 'Ausgabe wird hier erscheinen...';
-});
-
-// Button-Click-Event hinzufügen
 document.getElementById('saveButton').addEventListener('click', function() {
-    // Den Wert des Eingabefelds speichern
-    const inputValue = inputField.value;
+    // Wert aus dem Eingabefeld als Variable abspeichern
+    const inputValue = inputField.value.trim();
 
-    // Ausgabe oder andere Logik nach Button-Klick
-    console.log(`Gespeicherter Wert: ${inputValue}`);
+    // URL mit angehängter Domain erstellen, mittels der variable aus dem Inputfeld
+    const apiUrl = `https://BLBNBGAPPSOLP03.bayernlb.sfinance.net:9443/RedomsPublicService/getDomain?domain=${inputValue}`;
+
+    // JSON-Daten von der API abrufen
+    fetch(apiUrl) // Abruf über zuvor erstellte URL, läuft über API-Dienst von MIK
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP-Fehler! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Den Source-Wert aus den JSON-Daten verarbeiten Default = Unsicher, 1 TLS, 2 SPK
+            let securityStatus;
+            switch (data.Source) {
+                case 2:
+                    securityStatus = "SPK Mailverbund";
+                    break;
+                case 1:
+                    securityStatus = "TLS gesichert";
+                    break;
+                default:
+                    securityStatus = "Keine Daten verfügbar, eventuell Unsicher";
+            }
+
+            // Ausgabe im outputField anzeigen
+            outputField.textContent = `Sicherheitsstatus für ${data.Name}: ${securityStatus}`;
+        })
+        .catch(error => {
+            console.error('Fehler beim Abrufen der Daten:', error);
+            outputField.textContent = "Es gab ein Problem beim Abrufen der Daten.";
+        }); // error handling
 });
